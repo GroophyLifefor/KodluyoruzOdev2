@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="../style.css" />
+
+<div class="flex-container" id="ilgi-container">
+  <div class="flex-container-item">
+    <!-- ol>.roboto{alan $}*3>ul>.oswald{alan ürün $}*3 -->
+    <ol>
+      <li class="roboto">
+        Film:
+        <ul>
+          <li class="oswald">
+            <a
+              href="https://www.imdb.com/title/tt0398808/"
+              id="https://tr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/63/01/37/18742862.jpg"
+              class="ilgi-item"
+              >Terabithia Köprüsü</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://www.imdb.com/title/tt1160419/"
+              id="https://i0.wp.com/shiftdelete.net/wp-content/uploads/2021/10/dune-col-gezegeni-hayranlarina-mujde.jpg?fit=1280%2C720&ssl=1"
+              class="ilgi-item"
+              >Dune</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://www.imdb.com/list/ls020738923/"
+              id="https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode400/17822430/17822430-1631144652912-3e8439e85e2bf.jpg"
+              class="ilgi-item"
+              >KAÇOVVV</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="roboto">
+        Oyun:
+        <ul>
+          <li class="oswald">
+            <a
+              href="https://tr.wikipedia.org/wiki/Forza_(video_oyunu_serisi)"
+              class="ilgi-item"
+              id="https://www.linuxadictos.com/wp-content/uploads/forza-horizon-5.jpeg"
+              >Forza serisi</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://store.steampowered.com/app/526870/Satisfactory/"
+              class="ilgi-item"
+              id="https://img2.storyblok.com/fit-in/0x250/filters:format(png)/f/110098/1920x1080/894a599920/factory.jpeg"
+              >Satisfactory</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://store.steampowered.com/app/1145360/Hades/"
+              class="ilgi-item"
+              id="https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png"
+              >Hades</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li class="roboto">
+        Kurumlar:
+        <ul>
+          <li class="oswald">
+            <a
+              href="https://batch-man.com/"
+              class="ilgi-item"
+              id="https://batch-man.com/wp-content/uploads/2021/02/cropped-250-x-100-icon.png"
+              >Batch-Man</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://kodluyoruz.org/"
+              class="ilgi-item"
+              id="https://avatars.githubusercontent.com/u/30476529?s=280&v=4"
+              >Kodluyoruz & Kodluyoruz.Jr</a
+            >
+          </li>
+          <li class="oswald">
+            <a
+              href="https://flaxengine.com/"
+              class="ilgi-item"
+              id="https://pbs.twimg.com/media/E8FzTeyXMAEL2dS.jpg"
+              >FlaxEngine</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="flex-container-item">
+    <img
+      src=""
+      id="hoverimg"
+      alt=""
+      style="width: 100%; object-fit: contain; margin-left: 15px"
+    />
+  </div>
+  <div class="flex-container-item">
+    <a href="" id="hoverlink" class="vertical-center"></a>
+  </div>
+</div>
+
+<script>
+  var height = -1;
+  var ok = false;
+  $(document).ready(function () {
+    $(".ilgi-item").hover(
+      function () {
+        //hover
+        if (ok) return;
+        ok = true;
+        if (height == -1) height = $("#ilgi-container").height();
+        $("#hoverimg").attr("height", height);
+        $("#hoverimg").attr("src", $(this).attr("id"));
+        $("#hoverlink").attr("href", $(this).attr("href"));
+        document.getElementById("hoverlink").innerText = $(this).attr("href");
+      },
+      function () {
+        //unhover
+        ok = false;
+      }
+    );
+  });
+</script>

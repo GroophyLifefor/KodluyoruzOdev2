@@ -1,0 +1,107 @@
+body {
+  background-color: rgb(127, 127, 127);
+}
+
+.container-grp {
+  padding-top: 50px;
+  padding-right: 80px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.container-gh {
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 0px;
+}
+
+.title {
+  font-family: 'Oswald';
+  font-size: 60px;
+}
+
+.aboutme {
+  font-family: 'Roboto';
+  font-size: 25px;
+}
+
+.text {
+  background-color: rgb(127, 127, 127);
+  color: white;
+}
+
+.oswald {
+  font-family: 'Oswald';
+}
+
+.roboto {
+  font-family: 'Roboto';
+}
+
+.button-grp {
+  border: 1px solid white;
+  background-color: rgb(127, 127, 127);
+  margin-left: 25px;
+}
+
+.button-text-grp {
+  font-family: 'Oswald';
+  font-size: 25px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-right: 10px;
+  padding-bottom: 3px;
+  background-color: rgb(157, 155, 155);
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  position: relative;
+}
+
+.flex-container-item {
+  margin-left: 1px;
+  padding: 5px;
+  font-size: 15px;
+  background-color: rgb(157, 155, 155);
+  font-family: 'Kanit';
+}
+
+.clear-markdown {
+  margin-top: -5px;
+}
+
+.markdown {
+  background-color: rgb(157, 155, 155);
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.inline {
+  display: inline;
+}
+
+.ilgi-item {
+
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

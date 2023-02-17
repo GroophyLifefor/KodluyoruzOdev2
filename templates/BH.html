@@ -1,0 +1,65 @@
+<link href="../prism.css" rel="stylesheet" />
+<script src="../prism.js"></script>
+
+<h1>BH</h1>
+
+<h3>Creating a project</h3>
+
+Keeping simplicity at the forefront is our goal, so writing a simple screen is simple.
+<pre><code class="language-css">
+set $windowName (window):
+"Title": "Hello World",
+"Width": "335",
+"Height": "150"
+;
+
+show $windowName;
+</code></pre>
+<img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2FRTwZ5CbGgfubPlKubHAA%2Fout.png?alt=media&token=7d3d0c57-8f79-4688-8aa3-2b5c4d9885a0" alt="">
+<h3>Creating GUI</h3>
+If you don't have Bat.Bat in same folder or system environment variables can give error.
+<pre><code class="language-css">
+ 
+//Made with BH
+
+set $windowName (window):
+"Title": "Clock",
+"Width": "480",
+"Height": "320",
+"ResizeMode": "NoResize",
+"Loaded": "Window_Loaded"
+;
+
+com new method -> $windowName as cs:
+"name": "Window_Loaded",
+"args": "sender, e",
+"code": "
+	Icon = new BitmapImage(new Uri(\"$srcpath\\\\clean.ico\"));
+".
+;
+
+com new method -> $windowName as cs:
+"name": "Btn_Clicked",
+"args": "sender, e",
+"code": "
+	Detail.Content = Batch.Input(\"bat detail 17\").Stdout.ToString();
+".
+;
+
+app new comp -> $windowName as (Button):
+"inner": "Get Info For Gecho",
+"Name": "Getbtn",
+"VerticalAlignment": "Top",
+"Click": "Btn_Clicked",
+"Margin": "62,10,62,0".
+;
+
+app new comp -> $windowName as (Label):
+"Name": "Detail",
+"Margin": "0,30,0,0".
+;
+
+show $windowName;
+    </code></pre>
+    <img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2FF4ksutl1EJPWbyR4qIQt%2Fnc.png?alt=media&token=92c3a896-23fc-43ce-8c58-81a8b8a683c6" alt="">
+    <img src="https://2741223122-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FezZNV4uHyq0cjDgDRxMD%2Fuploads%2Fz1CK8RklLliR3NElogfb%2Fc.png?alt=media&token=06a5e17b-f657-42e5-83cb-7d65fa3f42a5" alt="">

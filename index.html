@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kanit'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <title>Kodluyoruz Ödevi</title>
+</head>
+<body> 
+
+  <div class="container-grp">
+    <span class="title text"><strong>Murat</strong> Kirazkaya</span>
+    <p class="aboutme text">
+      Merhabalar, ben Murat 17 yaşındayım, güncel olarak dotnet teknolojisi   <br>
+      üzerinde projeler yapıyorum ve front-end öğrenmeye çalışıyorum, güzel bir    <br> 
+      front-end temeliyle ASP.NET'e girmek istiyorum, proje odaklarım genel olarak    <br>
+      kullanımı kolaylaştıran c# projeleri ve batch teknolojileri, +4 yıldır bu  <br>
+      sektördeyim ve insanlara yardım etmeyi seviyorum, herkese başarılar dilerim 🙂.
+    </p>
+    <div class="container-gh">
+      <a class="button-grp button-text-grp" target="_blank"  href="https://github.com/GroophyLifefor">GitHub</a>
+      <a class="button-grp button-text-grp" target="_blank" href="https://www.linkedin.com/in/groophylifefor/">LinkedIn</a>
+      <a class="button-grp button-text-grp" target="_blank" href="https://twitter.com/LifeforGroophy">Twitter</a>
+    </div>
+    <div class="flex-container-item clear-markdown inline">
+      Clear (Hover)
+    </div>
+    <br><br>
+
+    <div class="flex-container">
+      <div class="flex-container-item">
+        BadApple
+      </div>
+      <div class="flex-container-item">
+        BatCenter
+      </div>
+      <div class="flex-container-item">
+        CmdFunc
+      </div>  
+      <div class="flex-container-item">
+        ResponsiveForm
+      </div>
+      <div class="flex-container-item">
+        BH (Simple syntax based language)
+      </div>
+      <div class="flex-container-item" style="margin-left: 25px;">
+        İlgi alanlarım
+      </div>
+    </div>
+    
+    <div id="markdown" class="markdown">
+      <!--Will filling from ajax-->
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+  <script>
+  var ok = false;
+  setTimeout(() => {  console.log("World!"); }, 50);
+  $(document).ready(function(){
+    $(".flex-container-item").hover(function(){
+        if (ok) return;
+        ok = true;
+        $(this).css("background-color", "white");
+        var link = "";
+        if ((this).innerHTML.trim() == "BadApple")
+        {
+          link = "https://raw.githubusercontent.com/GroophyLifefor/BadApple/main/README.md";
+        }
+        else if ((this).innerHTML.trim() == "BatCenter")
+        {
+          link = "https://raw.githubusercontent.com/Batch-Man/BatCenter/main/README.md";
+        }
+        else if ((this).innerHTML.trim() == "CmdFunc")
+        {
+          link = "https://raw.githubusercontent.com/Groophy-Inc/Groophy.CmdFunc/main/README.md";
+        }
+        else if ((this).innerHTML.trim() == "ResponsiveForm")
+        {
+          link = "https://raw.githubusercontent.com/GroophyLifefor/ResponsiveForm/master/README.md";
+        }
+        else if ((this).innerHTML.trim() == "BH (Simple syntax based language)")
+        {
+          $('#markdown').load("templates/BH.html");
+          return;
+        }
+        else if ((this).innerHTML.trim() == "İlgi alanlarım")
+        {
+          $('#markdown').load("templates/ilgiAlanlarım.html");
+          return;
+        }
+
+        //validate invalid link
+        if (link == "") 
+        {
+          document.getElementById("markdown").innerHTML = "";
+          return;
+        }
+        $.get(link, function(data, status){
+          var converter = new showdown.Converter();
+          document.getElementById("markdown").innerHTML = converter.makeHtml(data);
+        });
+
+      }, function(){
+        $(this).css("background-color", "rgb(157, 155, 155)");
+        ok = false;
+    });
+  });
+  </script>
+</body>
+</html>
