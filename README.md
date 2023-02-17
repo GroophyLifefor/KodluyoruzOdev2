@@ -1,1 +1,1 @@
-https://groophylifefor.github.io/KodluyoruzOdev1/
+https://groophylifefor.github.io/KodluyoruzOdev2/
